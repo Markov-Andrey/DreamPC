@@ -1,0 +1,46 @@
+{
+  "stores": {
+    "e2": {
+      "price_selector": ".product-price-bl-mini-value"
+    },
+    "ram": {
+      "price_selector": "[itemprop='price']"
+    },
+    "dns": {
+      "price_selector": ".product-card-purchase__current-price"
+    },
+    "fk": {
+      "price_selector": ".price-title > span:last-child"
+    },
+    "ozon": {
+      "price_selector": ".pdp_f7b.tsHeadline600Large"
+    },
+    "texnosmart": {
+      "price_selector": ".price-sales"
+    },
+    "onliner": {
+      "price_selector": ".offers-description__link_nodecor"
+    },
+    "newton": {
+      "price_selector": ".price"
+    },
+    "xcore": {
+      "price_selector": ".price"
+    },
+    "5element": {
+      "price_selector": ".p-price__actual"
+    },
+    "nsv": {
+      "price_selector": ".price_value"
+    },
+    "alloplus": {
+      "price_selector": ".price_value"
+    },
+    "amd": {
+      "price_selector": ".new-price-tov-items"
+    },
+    "21vek": {
+      "price_selector": ".ProductPrice_productPrice__thjM7.Prices_price__41d3a.Text-module__text.Text-module__body"
+    }
+  }
+}
