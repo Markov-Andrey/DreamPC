@@ -45,8 +45,6 @@ def main():
                 store_key = extract_domain(url)
                 selector = stores_config.get(store_key, '')
 
-                print(f"🏪 {store_key}")
-
                 page = browser.new_page()
                 price_text = None
 
@@ -70,11 +68,11 @@ def main():
                             'url': url,
                             'price_text': price_text
                         })
-                        print(f"💰 {price_text}")
+                        print(f"🏪 {store_key} | 💰 {price_text}")
                     except ValueError:
-                        print(f"💰 {price_text} (не число)")
+                        print(f"🏪 {store_key} | 💰 {price_text} (не число)")
                 else:
-                    print("❌ Цена не найдена")
+                    print(f"🏪 {store_key} | ❌ Цена не найдена")
 
                 page.close()
                 time.sleep(0.5)

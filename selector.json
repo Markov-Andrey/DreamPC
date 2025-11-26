@@ -15,6 +15,15 @@
     "amd.by": ".new-price-tov-items",
     "21vek.by": ".ProductPrice_productPrice__thjM7.Prices_price__41d3a.Text-module__text.Text-module__body",
     "server.by": ".price-block-cena",
-    "maxisale.by": ".product-price-bl-mini-value"
+    "maxisale.by": ".product-price-bl-mini-value",
+    "256bit.by": ".price_value",
+    "8bit.by": ".product-price-bl-mini-value",
+    "itguide.by": ".product__price-number",
+    "technoby.by": ".price",
+    "multimart.by": ".price__new.price_val",
+    "tm.by": ".product-info.display-price",
+    "rulez.by": ".price-main",
+    "force.shop.by": ".current-price",
+    "emmet.by": ".price_value"
   }
 }
