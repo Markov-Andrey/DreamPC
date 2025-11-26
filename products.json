@@ -38,6 +38,14 @@
         {
           "store": "xcore",
           "url": "https://x-core.by/catalog/komplektuyushchie_dlya_kompyuterov/protsessory/protsessor_amd_ryzen_9_9950x3d"
+        },
+        {
+          "store": "server_by",
+          "url": "https://server.by/komplektuyuschie-dlya-pk/protsessory/42406-amd-ryzen-9-9950x3d.html"
+        },
+        {
+          "store": "maxisale",
+          "url": "https://maxisale.by/product/processor-amd-ryzen-9-9950x3d"
         }
       ]
     },
@@ -99,6 +107,14 @@
         {
           "store": "21vek",
           "url": "https://www.21vek.by/graphic_cards/geforcertx5090gamerock_palit_9846039.html?utm_source=google&utm_medium=cpc&utm_campaign=22327476178&utm_content=|&utm_term=&gad_source=1&gad_campaignid=22317320391&gclid=Cj0KCQiAxJXJBhD_ARIsAH_JGjg8XikTooqXlTh0E2pOh37ZZ16uUajZx27ZNKj_KAZlR07fYpoytpsaApIeEALw_wcB"
+        },
+        {
+          "store": "server_by",
+          "url": "https://server.by/komplektuyuschie-dlya-pk/videokarty/43010-palit-geforce-rtx-5090-gamerock-oc-ne75090s19r5-gb2020g.html"
+        },
+        {
+          "store": "maxisale",
+          "url": "https://maxisale.by/product/videokarta-palit-geforce-rtx-5090-gamerock-oc-ne75090s19r5-gb2020g"
         }
       ]
     }

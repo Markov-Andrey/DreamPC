@@ -15,6 +15,7 @@ def clean_price(text, pattern):
         "alloplus": lambda t: re.sub(r'[^\d.]', '', t.replace(' ', '')),
         "amd": lambda t: re.sub(r'[^\d.]', '', t.replace(' ', '').split('руб.')[0].strip()),
         "21vek": lambda t: re.sub(r'[^\d.]', '', t.replace(' ', '').replace(',', '.').replace('р.', '')),
+        "server_by": lambda t: re.sub(r'[^\d.]', '', t.replace(' ', '').replace(',', '.').replace('РУБ.', '')),
         "default": lambda t: t
     }
 

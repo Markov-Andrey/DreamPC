@@ -41,6 +41,12 @@
     },
     "21vek": {
       "price_selector": ".ProductPrice_productPrice__thjM7.Prices_price__41d3a.Text-module__text.Text-module__body"
+    },
+    "server_by": {
+      "price_selector": ".price-block-cena"
+    },
+    "maxisale": {
+      "price_selector": ".product-price-bl-mini-value"
     }
   }
 }
