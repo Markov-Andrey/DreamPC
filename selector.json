@@ -1,0 +1,20 @@
+{
+  "stores": {
+    "e2.by": ".product-price-bl-mini-value",
+    "ram.by": "[itemprop='price']",
+    "dns-shop.by": ".product-card-purchase__current-price",
+    "fk.by": ".price-title > span:last-child",
+    "ozon.by": ".pdp_f7b.tsHeadline600Large",
+    "texnosmart.by": ".price-sales",
+    "catalog.onliner.by": ".offers-description__link_nodecor",
+    "newton.by": ".price",
+    "x-core.by": ".price",
+    "5element.by": ".p-price__actual",
+    "nsv.by": ".price_value",
+    "alloplus.by": ".price_value",
+    "amd.by": ".new-price-tov-items",
+    "21vek.by": ".ProductPrice_productPrice__thjM7.Prices_price__41d3a.Text-module__text.Text-module__body",
+    "server.by": ".price-block-cena",
+    "maxisale.by": ".product-price-bl-mini-value"
+  }
+}

@@ -1,5 +1,6 @@
 from browser import BrowserManager
 from patterns import clean_price
+from urllib.parse import urlparse
 import json
 import time
 
@@ -18,8 +19,14 @@ def extract_price(page, selector, pattern="default"):
         pass
     return None
 
+def extract_domain(url):
+    """Извлекает домен из URL для использования как ключа"""
+    parsed = urlparse(url)
+    domain = parsed.netloc
+    return domain.replace('www.', '')
+
 def main():
-    with open('stores.json', 'r', encoding='utf-8') as f:
+    with open('selector.json', 'r', encoding='utf-8') as f:
         stores_config = json.load(f)['stores']
 
     with open('products.json', 'r', encoding='utf-8') as f:
@@ -34,21 +41,19 @@ def main():
 
             prices = []
 
-            for store_info in product['urls']:
-                store_name = store_info['store']
-                store_config = stores_config.get(store_name, {})
-                selector = store_config.get('price_selector', '')
+            for url in product['urls']:
+                store_key = extract_domain(url)
+                selector = stores_config.get(store_key, '')
 
-                print(f"🏪 {store_name}")
+                print(f"🏪 {store_key}")
 
                 page = browser.new_page()
                 price_text = None
 
-                # 3 попытки получить цену
-                for attempt in range(3):
+                for attempt in range(5):
                     try:
-                        page.goto(store_info['url'], wait_until="domcontentloaded", timeout=10000)
-                        price_text = extract_price(page, selector, store_name)
+                        page.goto(url, wait_until="domcontentloaded", timeout=10000)
+                        price_text = extract_price(page, selector, store_key)
                         if price_text:
                             break
                         time.sleep(0.5)
@@ -60,9 +65,9 @@ def main():
                     try:
                         price_value = float(price_text)
                         prices.append({
-                            'store': store_name,
+                            'store': store_key,
                             'price': price_value,
-                            'url': store_info['url'],
+                            'url': url,
                             'price_text': price_text
                         })
                         print(f"💰 {price_text}")
@@ -74,7 +79,6 @@ def main():
                 page.close()
                 time.sleep(0.5)
 
-            # Минимальная цена
             if prices:
                 min_price = min(prices, key=lambda x: x['price'])
                 print(f"\n🏆 МИНИМАЛЬНАЯ ЦЕНА: {min_price['price_text']}")
