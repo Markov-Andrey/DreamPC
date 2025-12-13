@@ -6,7 +6,7 @@
     "fk.by": ".price-title > span:last-child",
     "ozon.by": ".pdp_f7b.tsHeadline600Large",
     "texnosmart.by": ".price-sales",
-    "catalog.onliner.by": ".offers-description__link_nodecor",
+    "catalog.onliner.by": "div.product-aside__control > a.button-style.button-style_specific-alter.button-style_big-alter.product-aside__button[href$=\"/prices\"]",
     "newton.by": ".price",
     "x-core.by": ".price",
     "5element.by": ".p-price__actual",

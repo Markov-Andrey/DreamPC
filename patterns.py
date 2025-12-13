@@ -7,7 +7,12 @@ def clean_price(text, pattern):
         "fk.by": lambda t: t.replace(' ', '').replace('руб.', '.').replace('коп.', '').replace(',', '.'),
         "ozon.by": lambda t: re.sub(r'[^\d,]', '', t).replace(',', '.'),
         "texnosmart.by": lambda t: re.sub(r'[^\d,]', '', t).replace(',', '.'),
-        "catalog.onliner.by": lambda t: re.sub(r'[^\d,]', '', t).replace(',', '.'),
+        "catalog.onliner.by": lambda t: (
+            re.search(r'от[\s\xa0]*([\d\s]+,\d+)', t)
+            .group(1)
+            .replace(' ', '')
+            .replace(',', '.')
+        ),
         "newton.by": lambda t: f"{t.replace(' ', '')[:-2]}.{t.replace(' ', '')[-2:]}",
         "x-core.by": lambda t: re.sub(r'[^\d.]', '', t.replace(' ', '').replace('руб.', '')),
         "5element.by": lambda t: re.sub(r'[^\d.]', '', t.replace(' ', '')),

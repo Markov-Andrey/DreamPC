@@ -5,7 +5,6 @@ import json
 import time
 
 def extract_price(page, selector, pattern="default"):
-    """Достаем цену по селектору с указанным паттерном очистки"""
     try:
         element = page.query_selector(selector)
         if element:
@@ -13,14 +12,14 @@ def extract_price(page, selector, pattern="default"):
                 price_text = element.get_attribute('content')
             else:
                 price_text = element.inner_text().strip()
-
+            if not price_text:
+                return None
             return clean_price(price_text, pattern)
     except:
-        pass
+        return None
     return None
 
 def extract_domain(url):
-    """Извлекает домен из URL для использования как ключа"""
     parsed = urlparse(url)
     domain = parsed.netloc
     return domain.replace('www.', '')
@@ -48,16 +47,18 @@ def main():
                 page = browser.new_page()
                 price_text = None
 
-                for attempt in range(5):
-                    try:
-                        page.goto(url, wait_until="domcontentloaded", timeout=10000)
-                        price_text = extract_price(page, selector, store_key)
-                        if price_text:
-                            break
-                        time.sleep(0.5)
-                    except Exception:
-                        time.sleep(1)
-                        continue
+                try:
+                    page.goto(url, wait_until="domcontentloaded", timeout=20000)
+                except:
+                    print(f"🏪 {store_key} | ❌ Не удалось загрузить страницу")
+                    page.close()
+                    continue
+
+                for attempt in range(10):
+                    price_text = extract_price(page, selector, store_key)
+                    if price_text:
+                        break
+                    time.sleep(0.5)
 
                 if price_text:
                     try:
